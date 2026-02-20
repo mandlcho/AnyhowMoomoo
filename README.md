@@ -17,33 +17,52 @@ Local trading system integrating moomoo OpenAPI + OpenD for US equity swing trad
 - Phase 4: Execution engine, risk management
 - Phase 5: TUI/Web UI for trade approval
 
-## Quick Start
+## 🚀 START HERE - Quick Start
 
-### Prerequisites
-1. **OpenD installed and running** on localhost:11111
-2. **Python 3.10+**
-3. **moomoo account** (paper trading supported)
-
-### Setup
+**⚠️ IMPORTANT:** Always run the verification script first!
 
 ```bash
-# Clone
+# 1. Clone
 git clone https://github.com/mandlcho/AnyhowMoomoo.git
 cd AnyhowMoomoo/algomoomoo
 
-# Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# Configure
+# 3. ✅ VERIFY SETUP (Run this first!)
+python scripts/verify_setup.py
+```
+
+This will check:
+- ✅ Python version
+- ✅ All packages installed
+- ✅ Project structure
+- ✅ Config files
+
+**If verification passes, continue:**
+
+```bash
+# 4. Configure credentials
 cp .env.example .env
 # Edit .env with your moomoo credentials
 
-# Review config
-vim config/config.yaml
+# 5. Test configuration (no OpenD required)
+python scripts/test_config.py
 
-# Run
+# 6. Run unit tests (no OpenD required)
+pytest tests/unit/ -v
+
+# 7. (Optional) Test OpenD connection
+python scripts/test_opend.py
+
+# 8. Run the daemon (requires OpenD)
 python -m daemon.main
 ```
+
+### Prerequisites
+- **Python 3.10+** (required)
+- **moomoo account** (required for live/paper trading)
+- **OpenD** (optional for Phase 1 testing)
 
 ### Configuration
 

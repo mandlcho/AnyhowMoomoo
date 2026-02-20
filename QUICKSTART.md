@@ -8,6 +8,16 @@ This is the express setup guide. For detailed troubleshooting, see [SETUP.md](SE
 - Git installed
 - 5 minutes of time
 
+---
+
+## ⚠️ MANDATORY FIRST STEP ⚠️
+
+**Always run `verify_setup.py` before doing anything else!**
+
+This automated test will tell you exactly what's missing or misconfigured.
+
+---
+
 ## Step-by-Step (Copy & Paste)
 
 ### 1. Clone and Enter Directory
@@ -32,7 +42,9 @@ source venv/bin/activate    # Mac/Linux
 pip install -r requirements.txt
 ```
 
-### 3. Verify Setup
+### 3. ✅ VERIFY SETUP (MANDATORY!)
+
+**Run this now:**
 
 ```bash
 python scripts/verify_setup.py
@@ -40,12 +52,20 @@ python scripts/verify_setup.py
 
 Expected output:
 ```
+============================================================
+AnyhowMoomoo Setup Verification
+============================================================
 ✅ PASS - Python version
 ✅ PASS - Package imports
 ✅ PASS - Project structure
 ✅ PASS - config.yaml
 ⚠️  FAIL - .env file (not yet created)
+============================================================
 ```
+
+**Do not proceed until you see ✅ for Python, packages, and structure!**
+
+If any check fails, the script will tell you exactly how to fix it.
 
 ### 4. Configure Credentials
 

@@ -41,8 +41,42 @@ def setup_logging(log_dir: str, level: str = "INFO"):
     )
 
 
+def run_startup_checks():
+    """Run basic startup checks before proceeding."""
+    import os
+    
+    checks_passed = True
+    
+    # Check required files exist
+    required_files = [
+        "config/config.yaml",
+        "data/models.py",
+        "daemon/config.py",
+        "connectors/opend.py",
+    ]
+    
+    for filepath in required_files:
+        if not os.path.exists(filepath):
+            print(f"❌ Missing required file: {filepath}")
+            checks_passed = False
+    
+    if not checks_passed:
+        print("\n⚠️  Startup checks failed!")
+        print("\nRun this to diagnose the issue:")
+        print("  python scripts/verify_setup.py")
+        return False
+    
+    return True
+
+
 def main():
     """Main daemon loop."""
+    # Quick startup checks
+    print("Running startup checks...")
+    if not run_startup_checks():
+        return 1
+    print("✅ Startup checks passed\n")
+    
     from daemon.config import ConfigLoader
     from connectors.opend import OpenDConnection
     
