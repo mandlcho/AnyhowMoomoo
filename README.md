@@ -17,9 +17,34 @@ Local trading system integrating moomoo OpenAPI + OpenD for US equity swing trad
 - Phase 4: Execution engine, risk management
 - Phase 5: TUI/Web UI for trade approval
 
-## 🚀 START HERE - Quick Start
+## 🚀 START HERE - One-Command Setup
 
-**⚠️ IMPORTANT:** Always run the verification script first!
+**Easiest way to get started:**
+
+```bash
+# Clone the repo
+git clone https://github.com/mandlcho/AnyhowMoomoo.git
+cd AnyhowMoomoo/algomoomoo
+
+# Run automated setup (Linux/Mac)
+bash setup.sh
+
+# OR (Windows)
+setup.bat
+```
+
+The setup script will:
+- ✅ Check Python version (3.10+ required)
+- ✅ Install all dependencies
+- ✅ Create .env template
+- ✅ Run verification tests
+- ✅ Show you next steps
+
+**Total time: ~2 minutes**
+
+---
+
+### Manual Setup (If You Prefer)
 
 ```bash
 # 1. Clone
