@@ -1,0 +1,46 @@
+# Execution mode: SEMI_AUTOMATIC or AUTOMATIC
+execution:
+  mode: "SEMI_AUTOMATIC"
+  
+# OpenD connection
+opend:
+  host: "127.0.0.1"
+  port: 11111
+  
+# Account settings
+account:
+  initial_equity: 100.0
+  currency: "USD"
+  paper_trading: true
+  
+# Risk management
+risk:
+  max_risk_per_trade_pct: 1.5
+  max_open_positions: 3
+  max_sector_exposure_pct: 40.0
+  min_liquidity_avg_volume: 500000
+  
+  # Stricter limits for AUTOMATIC mode
+  automatic_overrides:
+    max_risk_per_trade_pct: 1.0
+    max_open_positions: 2
+    
+# Position sizing
+sizing:
+  min_notional_per_trade: 10.0
+  max_notional_per_trade: 50.0
+  fractional_shares: true
+  min_rr_ratio: 2.0
+  
+# Data settings (for future phases)
+data:
+  historical_days: 365
+  intraday_interval: "1min"
+  cache_dir: "./data_cache"
+  
+# Logging
+logging:
+  level: "INFO"
+  dir: "./logs"
+  rotation: "1 day"
+  retention: "30 days"
