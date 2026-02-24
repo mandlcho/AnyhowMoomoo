@@ -9,9 +9,18 @@ loguru>=0.7.0
 pytest>=7.4.0
 pytest-asyncio>=0.21.0
 
-# Future phases (commented out for now)
-# pandas>=2.0.0
-# numpy>=1.24.0
+# Phase 2 dependencies
+yfinance>=0.2.40           # Free historical data (fallback source)
+pandas>=2.0.0              # Data manipulation for indicators
+numpy>=1.24.0              # Numerical computing
+scipy>=1.11.0              # Statistical functions (Kelly Criterion)
+plotly>=5.18.0             # Interactive charts for backtest reports
+jinja2>=3.1.0              # HTML template rendering
+beautifulsoup4>=4.12.0     # S&P 500 list scraping
+requests>=2.31.0           # HTTP requests
+pyarrow>=14.0.0            # Parquet file support
+
+# Future phases (Phase 5 UI)
 # textual>=0.50.0
 # fastapi>=0.100.0
 # uvicorn>=0.23.0
